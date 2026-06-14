@@ -47,7 +47,7 @@ A real-time **Network Intrusion Detection System** built with Python and Scapy. 
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/nids.git
+git clone https://github.com/Hunterx_/nids.git
 cd nids
 ```
 
@@ -181,9 +181,9 @@ MIT License — free to use, modify, and distribute.
 
 ## 👤 Author
 
-**Your Name**  
-College/University Name  
-[GitHub](https://github.com/YOUR_USERNAME) · [LinkedIn](https://linkedin.com/in/YOUR_USERNAME)
+**Adarsh saxena **  
+Amity university noida   
+[GitHub](https://github.com/Hunterx_) · [LinkedIn](https://linkedin.com/in/adarsh-saxena007)
 
 ---
 
