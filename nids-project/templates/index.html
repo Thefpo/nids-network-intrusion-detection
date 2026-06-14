@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NIDS — Network Intrusion Detection System</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <!-- ── Header ── -->
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🛡️</span>
+      <span class="logo-text">NIDS</span>
+      <span class="logo-sub">Network Intrusion Detection System</span>
+    </div>
+    <div class="header-right">
+      <span class="live-dot"></span>
+      <span id="live-label">LIVE</span>
+    </div>
+  </header>
+
+  <!-- ── Summary Cards ── -->
+  <section class="cards">
+    <div class="card card-red">
+      <div class="card-label">Total Alerts</div>
+      <div class="card-value" id="total-alerts">—</div>
+    </div>
+    <div class="card card-orange">
+      <div class="card-label">HIGH Severity</div>
+      <div class="card-value" id="high-alerts">—</div>
+    </div>
+    <div class="card card-yellow">
+      <div class="card-label">MEDIUM Severity</div>
+      <div class="card-value" id="medium-alerts">—</div>
+    </div>
+    <div class="card card-blue">
+      <div class="card-label">IPs Monitored</div>
+      <div class="card-value" id="total-ips">—</div>
+    </div>
+  </section>
+
+  <!-- ── Charts Row ── -->
+  <section class="charts">
+    <div class="chart-box">
+      <h3>Alerts by Type</h3>
+      <canvas id="typeChart"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Top IPs by Packets</h3>
+      <canvas id="ipChart"></canvas>
+    </div>
+  </section>
+
+  <!-- ── Alerts Table ── -->
+  <section class="table-section">
+    <div class="table-header">
+      <h3>Live Alerts Feed</h3>
+      <button onclick="clearAlertDisplay()">Clear Display</button>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Time</th>
+            <th>Type</th>
+            <th>Severity</th>
+            <th>Source IP</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody id="alerts-body">
+          <tr><td colspan="6" class="empty">Waiting for alerts…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── Traffic Table ── -->
+  <section class="table-section">
+    <h3>Top Traffic Sources</h3>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>IP Address</th><th>Packets</th><th>Bytes</th><th>Unique Ports</th></tr>
+        </thead>
+        <tbody id="traffic-body">
+          <tr><td colspan="4" class="empty">No traffic yet…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <span>NIDS v1.0 — Built with Python + Scapy + Flask</span>
+    <span>Auto-refresh every 3s</span>
+  </footer>
+
+  <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
